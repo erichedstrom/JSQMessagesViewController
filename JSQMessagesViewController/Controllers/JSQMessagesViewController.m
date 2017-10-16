@@ -125,7 +125,7 @@ JSQMessagesKeyboardControllerDelegate>
 @property (weak, nonatomic) IBOutlet JSQMessagesCollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet JSQMessagesInputToolbar *inputToolbar;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolbarHeightConstraint;
+@property (weak, nonatomic) NSLayoutConstraint *toolbarHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolbarBottomLayoutGuide;
 
 @property (weak, nonatomic) UIView *snapshotView;
@@ -273,6 +273,8 @@ JSQMessagesKeyboardControllerDelegate>
 
     [self jsq_configureMessagesViewController];
     [self jsq_registerForNotifications:YES];
+
+    self.toolbarHeightConstraint = self.inputToolbar.contentView.textViewHeight;
 }
 
 - (void)viewWillAppear:(BOOL)animated
